@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diodos LED</title>
+        <meta name="Author" content="Pablo Araoz">
+        <meta name="description" content="Teoría de los diodos LED y fórmulas para calcular resistencia y tensión para conectar LEDs">
+        <link rel="icon" href="./img/logo-pestania.png" type="image/png">
+        <!--FUENTES: -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Belanosima&family=Montserrat&family=Poppins:wght@300;400&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap">
+        <!--CSS:-->
+        <link rel="stylesheet" href="./css/styles-comunes.css">
+        <link rel="stylesheet" href="./css/style-led.css">
+    </head>
+    
+    <body>
+        <header>
+            <div class="logo">
+                <img src="./img/padaar-electro.png" alt="" class="logo-img">                
+            </div>
+
+            <nav>            
+                <a href="index.html">Home</a>
+                <a href="#calculadoras">Teoría</a>            
+                <a href="#">Calculadoras</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="cuerpo-principal">
+                <h1>Diodos LED</h1>
+
+                <section id="introduccion" class="introduccion">
+                    <h2>¿Qué son los diodos LED y dónde se encuentran?</h2>
+                    <br>
+
+                    <p>Los diodos LED nos rodean. Los vemos en los teléfonos celulares, automóviles, semáforos, nuestros hogares, etc. Cada vez que se enciende algo electrónico hay una gran posibilidad de que haya un diodo LED detrás. Están disponibles en una gran variedad de tamaños, formas y colores. <br>
+                    Las siglas <strong>LED</strong> provienen del inglés "Light Emitting Diode", lo cual significa "Diodo Emisor de luz".
+                    <br><br>
+                    El diodo LED tiene un funcionamiento similar al diodo rectificador: sólo deja pasar la corriente en un sólo sentido como indica su símbolo, al cual se le añadieron 2 flechas indicando que emite luz cuando se pasa una corriente por él:    
+                    </p>
+
+                    <figure class="simbolo-led">
+                        <img src="./img/diodo-led.png" alt="diodo-led-simbolo" width="300px">
+                        <figcaption class="figcaption">Símbolo del diodo LED</figcaption>
+                    </figure>
+
+                    <p>Sin embargo, en un <strong>diodo rectificador</strong> cuando está polarizado directamente y circula corriente de ánodo a cátodo, la potencia eléctrica consumida es disipada toda en <strong>calor</strong>:                      
+                    </p>
+
+                    <figure class="simbolo-diodo-rectificador">
+                        <img src="./img/diodo-rectificador.png" alt="diodo-rectificador-simbolo" width="300px">
+                        <figcaption class="figcaption">Símbolo del diodo Rectificador</figcaption>
+                    </figure>
+
+                    <p>En un diodo LED la mayor parte de potencia eléctrica consumida se transforma en <strong>luz</strong>. Por este motivo, el diodo LED viene dentro de una cápsula de plástico, y en la parte superior dispone de una lente para mejorar la visión de la luz emitida.
+                    <br>
+                    Otra diferencia del diodo LED con respecto al diodo rectificador, es que la tensión que se debe superar en el diodo rectificador para que comience a circular una corriente en polarización directa, es de unos <strong>0,5 a 0,6 Voltios</strong> aproximadamente, mientras que en un diodo LED este valor es mucho mayor, y es de unos <strong>1,5 a 3,5 voltios</strong>. Además, la resistencia interna de los diodos LED es de un valor muy bajo, por lo que se necesitará una resistencia limitadora de corriente, en serie con el led, para que no se queme.   
+                    </p>
+                </section>
+
+                <section class="tipos-led">
+                    <h2>¿De qué depende la intensidad de la luz del LED?</h2>
+                    <br>
+                    <p>La luz emitida por un diodo LED tendrá una longitud de onda (color) que va en función del tipo de compuesto químico que lo constituye. <br>
+                    La tensión que hay en extemos del LED depende del color que emite y de la intensidad de corriente para conseguir una luz aceptable. <br> <strong>Cuanto mayor sea la intensidad de corriente, mayor intensidad luminosa desprende el diodo LED</strong>, pero NUNCA deberá superar la intensidad de corriente máxima que figura en las hojas de características o <span class="datasheet">datasheet</span>. 
+                    </p>
+
+                    <figure class="tabla-diodos-led">
+                        <img src="./img/tabla-leds.png" alt="tabla-leds" class="tabla-diodos">
+                    </figure>
+
+                    <h3>¿Por qué no se puede conectar directamente una tensión de, por ejemplo, 5v a un diodo LED?</h3>
+                    <br>
+                    
+                    <p>
+                        La respuesta rápida es simple: se quema. Pero vamos a ver por qué ocurre esto.
+
+                    </p>
+                   
+                </section>
+
+            </section>
+
+        </main>
+        
+        
+    </body>
+</html>
