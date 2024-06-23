@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ley de Ohm</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="Author" content="Pablo Araoz">
+        <meta name="description" content="Teoría de la ley de Ohm y calculadoras para obtener valores de tensión, mA, A u Ω-KΩ-MΩ">
+        <link rel="icon" href="./img/logo-pestania.png" type="image/png">
+        <!--FUENTES: -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Belanosima&family=Montserrat&family=Poppins:wght@300;400&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap">
+        <!--BOOTSTRAP:-->
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    
+    <body>
+        <header>
+            <div class="logo">
+                <img src="./img/padaar-electro.png" alt="" class="logo-img">                
+            </div>
+
+            <nav>            
+                <a href="#teoria-de-calculo">Teoría</a>
+                <a href="#calculadoras">Calculadora</a>            
+                <a href="#">Diodos LED</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="cuerpo-principal">
+                <h1>Ley de OHM</h1>
+
+                <section id="introduccion" class="introduccion">
+                    <h2>¿Qué es la ley de Ohm?</h2>
+                    <br>
+        
+                    <p>La ley de Ohm es una de las leyes más importantes de la electrónica (si es que no es la 
+                    más importante).</p> <br>
+                    
+                    <h3>
+                        La ley de Ohm relaciona 3 parámetros:
+                    </h3> <br>
+                        
+                    <p>
+                        <span class="voltaje">Voltaje</span>: fuerza que impulsa los electrones en el circuito. <br><br>
+                        <span class="corriente">Corriente</span>: flujo de electrones.
+                        <br><br>
+                        <span class="resistencia">Resistencia</span>: oposición al flujo de electrones.
+                    </p> <br> 
+        
+                    <p>Entre el voltaje y la corriente hay una relación de <strong>causa-efecto</strong>: el voltaje
+                    es la causa y la corriente es el efecto, es decir, el voltaje <strong>ocasiona</strong> la corriente.</p>  
+        
+                    <p>A menudo, en los centros de estudios, nos presentan la <strong>ley de Ohm</strong> con el siguiente triángulo:</p>   
+
+                    <figure class="triangulo">
+                        <img src="./img/Triangulo-ohm.png" alt="triangulo de la ley de ohm" width="250px">
+                    </figure>
+                </section>
+
+                <section id="teoria-de-calculo">
+                    <h2>¿Cómo calculamos Voltaje, Resistencia y Corriente según el triángulo?</h2>
+                    <br>
+
+                    <p><span class="voltaje">Voltaje</span>: tapamos la <strong>V</strong> en el triángulo
+                    y multiplicamos <strong>Resistencia x Intensidad</strong> (corriente).</p>
+                    <br>
+                    
+                    <p><span class="corriente">Corriente</span>: tapamos la <strong>I</strong> en el triángulo
+                    y dividimos <strong>Voltaje / Resistencia</strong>.</p>
+                    <br>
+
+                    <p><span class="resistencia">Resistencia</span>: tapamos la <strong>R</strong> en el triángulo
+                    y dividimos <strong>Voltaje / Intensidad</strong> (corriente).</p>
+                    <br>
+
+                    <p>Cuando obtenemos como resultado la corriente o intensidad, ésta se representa como <strong>Amperios o "A"</strong>.
+                    El amperaje es la cantidad de electricidad o carga eléctrica que pasa por un conductor por unidad de tiempo.
+                    Es como si se midiera la cantidad de litros de agua que pasa por una manguera cada 1 hora.</p>
+
+                    <h2>Relación entre Voltaje y Corriente:</h2>        
+                    
+                    <p>Si tuviésemos una <strong>Resistencia constante</strong> y aumentamos el <strong>Voltaje</strong>, esto ocasionaría 
+                    que la <strong>Corriente</strong> aumente. Es decir, que en éste escenario, la corriente es directamente proporcional
+                    al valor del voltaje. Así que sí bajamos el voltaje, también bajará la corriente.</p>
+
+                    <h2>Relación entre Resistencia y Corriente:</h2>
+
+                    <p>Sí tuviésemos un <strong>Voltaje o tensión constante</strong> y aumentamos el valor de la <strong>Resistencia</strong>,
+                    el valor de la <strong>Corriente</strong> disminuye. En este escenario, el valor de la resistencia es inversamente 
+                    proporcional al valor de la corriente. Es decir, que si el valor de la resistencia sube, el valor de la corriente baja, 
+                    y si el valor de la resistencia baja, el valor de la corriente sube.</p>
+                </section>
+
+                <section id="calculadoras">
+                    <h2 class="titulo-calculadoras">Calculadoras</h2>
+                    <p class="elecciones">Elegí qué querés calcular</p>
+                    <div class="botones">
+                        <button class="boton-voltaje" id="boton-voltaje">Calcular Voltaje</button>
+                        <button class="boton-intensidad" id="boton-intensidad">Calcular Intensidad</button>
+                        <button class="boton-resistencia" id="boton-resistencia">Calcular Resistencia</button>
+                    </div>
+
+                    <div class="ingreso-datos">
+                        <div class="calculo-voltaje">
+                            <div class="inputs-boton">
+                                <label for="idResistencia">Ingresá el valor de la resistencia:</label> 
+                                <input type="number" name="resistencia" id="idResistencia" class="caja-texto" placeholder="Resistencia" required>
+                                <div class="opciones-r">
+                                    <button class="ohm" id="ohm">Ω</button>
+                                    <button class="kohm" id="kohm">KΩ</button>
+                                    <button class="mohm" id="mohm">MΩ</button>
+                                </div>
+            
+                                <label for="idCorriente">Ingresá el valor de la corriente:</label> 
+                                <input type="number" name="corriente" id="idCorriente" class="caja-texto" placeholder="Corriente" required>
+                                <div class="opciones-a">
+                                    <button class="mA" id="mA">mA</button>
+                                    <button class="a" id="a">A</button>                                
+                                </div>
+                
+                                <button class="boton-calcular" id="boton-calcular-voltaje">CALCULAR</button>
+                            </div>
+                        </div>
+
+                        <div class="calculo-corriente">
+                            <div class="inputs-boton">
+                                <label for="idVoltaje">Ingresá el valor de la tensión:</label> 
+                                <input type="number" name="tension" id="idVoltaje" class="caja-texto" placeholder="Tensión" required>
+            
+                                <label for="idResistencia2">Ingresá el valor de la resistencia:</label> 
+                                <input type="number" name="resistencia" id="idResistencia2" class="caja-texto" placeholder="Resistencia" required>
+                                <div class="opciones-r">
+                                    <button class="ohm" id="ohm2">Ω</button>
+                                    <button class="kohm" id="kohm2">KΩ</button>
+                                    <button class="mohm" id="mohm2">MΩ</button>
+                                </div>
+                
+                                <button class="boton-calcular" id="boton-calcular-corriente">CALCULAR</button>
+                            </div>                        
+                        </div>
+
+                        <div class="calculo-resistencia">
+                            <div class="inputs-boton">
+                                <label for="idVoltaje2">Ingresá el valor de la tensión:</label> 
+                                <input type="number" name="tension" id="idVoltaje2" class="caja-texto" placeholder="Tensión" required>
+            
+                                <label for="idCorriente2">Ingresá el valor de la corriente:</label> 
+                                <input type="number" name="corriente" id="idCorriente2" class="caja-texto" placeholder="Corriente" required>
+                                <div class="opciones-a">
+                                    <button class="mA" id="mA2">mA</button>
+                                    <button class="a" id="a2">A</button>                                
+                                </div>
+                
+                                <button class="boton-calcular" id="boton-calcular-resistencia">CALCULAR</button>
+                            </div>                        
+                        </div>
+                    </div>
+                </section>
+
+                <section class="seccion-resultado">
+                    <div class="resultado-tension">
+                        <p>
+                            El valor de la tensión es de <span class="tension1"></span> voltios
+                        </p>                        
+                    </div>
+                    
+                    <div class="resultado-corriente">
+                        <p>
+                            El valor de la intensidad es de <span class="intensidad1"></span> mA
+                        </p>
+                    </div>
+                    <div class="resultado-corriente-2">
+                        <p>
+                            El valor de la intensidad es de <span class="intensidad2"></span> A
+                        </p>
+                    </div>
+
+                    <div class="resultado-resistencia">
+                        <p>
+                            El valor de la resistencia es de <span class="ohmios"></span> Ω
+                        </p>
+                    </div>
+
+                    <button class="boton-reset">RESET</button>
+                </section>
+            </section>    
+        </main>
+        <footer>
+            <p class="copyright">Pablo Araoz © 2024 - Todos los derechos reservados</p>
+        </footer>
+        <script src="./js/script.js"></script>
+    </body>
+</html>

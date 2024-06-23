@@ -1,0 +1,281 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+    align-items: center; /*Alineación Horizontal*/    
+    background-image: url("/img/fondo-header.png");
+    background-repeat: no-repeat;
+}
+
+nav{
+    padding: 10px 0px;
+    
+}
+
+a{
+    text-decoration: none;
+    color: yellow;
+    padding: 5px;    
+}
+
+a:hover{
+    color:white;
+    text-shadow: 0 0 15px white; /*Si hubiera aplicado "box-shadow* aplica la sombra a la CAJA y no al texto*/
+
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo-img{
+    /* height: 110px; */
+    width: 110px;
+    margin-top: 10px;
+}
+
+h1{
+    text-align: center;
+    color: blueviolet;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+h2{
+    text-align: start;
+    margin-bottom: 0.2em;
+    margin-top: 1em;
+    color:#e2e2e2;
+}
+
+h3{
+    color:#e2e2e2;
+}
+
+p{
+    text-align: justify;    
+    color:#e2e2e2;
+}
+
+body{    
+    
+    background-color: #07252d;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*CONTIENE TODO MENOS EL HEADER Y EL FOOTER */
+.cuerpo-principal{
+    max-width: 1140px;
+}
+
+
+.voltaje, .corriente, .resistencia{
+    font-weight: bold;      
+}
+
+.voltaje{
+    color: red;
+}
+
+.corriente{
+    color:rgb(255, 217, 0)
+}
+
+.resistencia{
+    color:rgb(0, 155, 0);
+}
+
+.triangulo{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.titulo-calculadoras{
+    text-align: center;
+    color:aqua;
+}
+
+.elecciones{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.boton-voltaje, .boton-intensidad, .boton-resistencia, .caja-texto{
+    width: 180px;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.calculo-voltaje{
+    display: none;
+}
+
+.calculo-corriente{
+    display: none;
+}
+
+.calculo-resistencia{
+    display: none;
+}
+
+/*Clases que serán agregadas con Js:*/
+.animar-boton-voltaje{
+    box-shadow: 0 0 20px red;
+    color:red;
+}
+
+.animar-boton-intensidad{
+    box-shadow: 0 0 20px yellow;
+    color:rgb(255, 68, 0);
+}
+
+.animar-boton-resistencia{
+    box-shadow: 0 0 20px green;
+    color:rgb(0, 99, 0);
+}
+
+.inputs-boton{
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 7px;
+    color: white;
+}
+
+.opciones-r{
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+}
+
+.opciones-a{
+    display: flex;
+    justify-content: space-evenly;
+    width: 120px
+}
+
+.ohm, .kohm, .mohm, .mA, .a{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: white;
+    background-color:rgb(0, 183, 255); 
+    cursor: pointer;
+}
+
+.boton-calcular{
+    font-family: 'Poppins';
+    width: 180px; 
+    font-size: 1rem;
+    background-color: rgb(0, 160, 0);
+    margin-top: 15px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.boton-calcular:hover{
+    background-color: rgb(255, 0, 255);    
+}
+
+/*Estilos que serán agregados desde JavaScript:*/
+.iluminar-boton{
+    box-shadow: 0px 0px 12px yellow;
+    background-color: yellow;
+    color:black;
+    font-weight: bold;
+}
+
+/*Sección resultado:*/
+.seccion-resultado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.resultado-tension, .resultado-corriente, .resultado-corriente-2, .resultado-resistencia{
+    display: none;
+}
+
+.tension1, .intensidad1, .intensidad2, .ohmios{
+    color:orange;
+}
+
+.resultado-tension, .resultado-corriente, .resultado-corriente-2, .resultado-resistencia > p{
+    text-align: center;    
+    font-size: 1.1em;
+}
+
+.boton-reset{
+    display: none;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    width: 180px;    
+    background-color: rgb(128, 0, 0);
+    color: rgb(255, 255, 255);
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.boton-reset:hover{
+    background-color: black;
+    color: yellow;
+}
+
+
+footer{
+    background-color: black;
+    margin-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.copyright{
+    font-size: 12px;
+    text-align: center;
+}
+
+/* RESPONSIVE */
+@media (min-width: 320px) and (max-width: 1920px) {
+    .logo-img{
+        width: calc(200px + (300 - 200) * ((100vw - 320px) / (1920 - 320))); ;
+    }    
+}
+
+@media (min-width: 1921px){
+    .logo-img{
+        width: 310px;
+    }
+}
