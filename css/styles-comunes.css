@@ -60,6 +60,7 @@ h2{
 
 h3{
     color:#e2e2e2;
+    text-align: center;
 }
 
 p{
@@ -84,6 +85,18 @@ main{
 /*CONTIENE TODO MENOS EL HEADER Y EL FOOTER */
 .cuerpo-principal{
     max-width: 1140px;
+}
+
+footer{
+    background-color: black;
+    margin-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.copyright{
+    font-size: 12px;
+    text-align: center;
 }
 
 /* RESPONSIVE */

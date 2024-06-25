@@ -1,5 +1,5 @@
 
-.simbolo-led, .simbolo-diodo-rectificador, .tabla-diodos-led{
+.diagrama-led, .simbolo-led, .simbolo-diodo-rectificador, .tabla-diodos-led, .circuito-led-quema, .formulas{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -19,6 +19,45 @@
     font-style: italic;
     color:burlywood;
 }
+
+.formulas-subtitulo{
+    text-align: center;
+}
+
+.sub-quema{
+    text-align: center;
+    color: red;
+}
+
+.span-ohm{
+    color:goldenrod;
+}
+
+.nota{
+    font-style: italic;
+    font-size: 15px;
+}
+
+.nota-roja{
+    color: red;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.ventaja{
+    color: rgb(0, 177, 0);
+    
+}
+
+.desventaja{
+    color: red;
+}
+
+.forward{
+    color: rgb(161, 161, 161);
+}
+
 
 
 
