@@ -35,8 +35,7 @@
 
                 <section id="introduccion" class="introduccion">
                     <h2>¿Qué son los diodos LED y dónde se encuentran?</h2>
-                    <br>
-
+                    
                     <p>Los diodos LED nos rodean. Los vemos en los teléfonos celulares, automóviles, semáforos, nuestros hogares, etc. Cada vez que se enciende algo electrónico hay una gran posibilidad de que haya un diodo LED detrás. Están disponibles en una gran variedad de tamaños, formas y colores. <br>
                     Las siglas <strong>LED</strong> provienen del inglés "Light Emitting Diode", lo cual significa "Diodo Emisor de luz".
                     <br><br>                       
@@ -71,7 +70,7 @@
 
                 <section id="tipos-led">
                     <h3>¿De qué depende la intensidad de la luz del LED?</h3>
-                    <br>
+                    
                     <p>La luz emitida por un diodo LED tendrá una longitud de onda (color) que va en función del tipo de compuesto químico que lo constituye. <br>
                     La tensión que hay en extemos del LED depende del color que emite y de la intensidad de corriente para conseguir una luz aceptable. <br> <strong>Cuanto mayor sea la intensidad de corriente, mayor intensidad luminosa desprende el diodo LED</strong>, pero NUNCA deberá superar la intensidad de corriente máxima que figura en las hojas de características o <span class="datasheet">datasheet</span>. 
                     </p>
@@ -83,8 +82,7 @@
 
                 <section id="circuitos-y-formulas">
                     <h3>¿Por qué no se puede conectar directamente una tensión de, por ejemplo, 5v a un diodo LED?</h3>
-                    <br>
-                    
+                                        
                     <p>
                         La respuesta rápida es simple: se quema. Pero vamos a ver por qué ocurre esto observando el siguiente circuito:
                     </p>
@@ -112,8 +110,7 @@
                     <br>
 
                     <h3 id="calculos-formulas">¿Cómo evitar que se queme el LED?</h3>
-                    <br>
-
+                    
                     <p>
                         Para evitar que se queme, se conecta una <strong>resistencia en serie</strong> con el LED cuya valor se obtiene aplicando la <span class="span-ohm">Ley de Ohm</span>. <br>
                         La corriente que pasa por la resistencia es la misma que pasará por el LED. El fabricante del LED indica que tiene una Intensidad de <strong>20 mA</strong> <br>
@@ -135,8 +132,7 @@
                     <h3>
                         ¿cómo calculamos la potencia que debe disipar la resistencia?
                     </h3>
-                    <br>
-
+                    
                     <p>
                         Es importante tener en cuenta la potencia o <strong>W</strong> de una resistencia, ya que esta se disipará en forma de calor. <br>
                         La fórmula para calcular la potencia se obtiene multiplicando la <strong>Intensidad al cuadrado * el valor de la Resistencia</strong> <br><br>
@@ -157,8 +153,7 @@
 
                 <section id="conexiones-de-leds">
                     <h3>Formas de conectar varios LEDs</h3>
-                    <br>
-
+                    
                     <p>
                         En ocasiones se podrá tener la necesidad de iluminar con varios LEDs, y se podrá hacer de 2 formas: <strong>en serie</strong> o <strong>en paralelo</strong>.
                     </p> <br>
@@ -176,7 +171,7 @@
                         <span class="desventaja">Desventaja de conectar los LEDs en paralelo</span>: el número de LEDs a conectar estará limitado por el valor de la fuente de tensión que se utilize y por el tipo de LED utilizado. <br><br>
                     </p>
 
-                    <h3>¿Cuántos diodos LED blancos de alta luminosidad y de 3mm se podrán conectar en serie a una fuente de 12 V? </h3> <br>
+                    <h3>¿Cuántos diodos LED blancos de alta luminosidad y de 3mm se podrán conectar en serie a una fuente de 12 V? </h3> 
 
                     <p>
                         Para ello, se deberá saber la tensión que hay en cada LED blanco cuando se ilumina. Si se va al <span class="datasheet">datasheet</span> del LED blanco de alta luminosidad, los fabricantes proporcionan un rango de tensiones posibles cuando circula una determinada intensidad. Ejemplo: <span class="forward">FORWARD VOLTAGE 3,2~3,4 VCD</span>.<br>En este caso, se deberá tomar siempre el caso más desfavorable, es decir, cuando cirucla <span class="forward">3,4 VCD</span> que será la tensión en sus extremos más pequeña. <br>
@@ -216,11 +211,17 @@
                     </figure>
 
                     <h3>¿Y si quisiera conectar más LEDs?</h3>
-                    <br>
+                    
+                    <p>
+                        Si quisiera aumentar el número de LEDs podré conectar, en <strong>paralelo</strong>, tantas ramas como <strong>intensidad</strong> me brinde la fuente de alimentación. <br>                        
+                    </p>
+
+                    <figure class="formulas">
+                        <img src="./img/3-ramas.png" alt="3-ramas" width="300px">
+                    </figure>
 
                     <p>
-                        Si quisiera aumentar el número de LEDs podré conectar, en <strong>paralelo</strong>, tantas ramas como <strong>intensidad</strong> me brinde la fuente de alimentación. <br>
-                        Por ejemplo, si la fuente es de 1 A, como cada cadena de diodos LED necesita 20 mA, realizo la siguiente fórmula:<br><br>
+                        Por ejemplo, si la fuente es de 1 A, como cada cadena de diodos LED necesita 20 mA, realizo la siguiente fórmula:<br>
                     </p>
 
                     <figure class="formulas">
@@ -232,8 +233,7 @@
                     </p> <br>
 
                     <h3>¿Cuánta potencia consume el circuito?</h3>
-                    <br>
-
+                    
                     <p>
                         Para responder a la pregunta, es necesario saber cuánta <strong>potencia</strong> se pierde en forma de calor en las resistencias del total suministrado por la fuente. Pero primero calculemos cuánta potencia entrega la <strong>fuente</strong>.
                     </p>
@@ -283,8 +283,7 @@
                     </p> <br>
 
                     <h3>¿Y de cuánto es el rendimiento en el circuito?</h3>
-                    <br>
-                    
+                                        
                     <p>
                         El rendimiento será el cociente entre la potencia útil (la potencia consumida por los componentes activos, como los LEDs) y la potencia suministrada por la fuente de alimentación. <br>                         
                     </p>
@@ -299,7 +298,7 @@
 
                     <p>
                         La <strong>Potencia útil</strong> es la potencia que realmente se utiliza en los componentes activos del circuito (en este caso, los LEDs). La <strong>potencia total</strong> es la potencia suministrada por la fuente de alimentación. <br>
-                        Como ya tenemos el dato de la potencia potencia total (12 W de la fuente) sólo falta calcular la potencia útil. Para encontrar la potencia útil, restamos la potencia disipada en las resistencias (2,4 W) de la potencia total suministrada (12 W):
+                        Como ya tenemos el dato de la potencia total (12 W de la fuente) sólo falta calcular la potencia útil. Para encontrar dicha potencia, restamos la potencia disipada en las resistencias (2,4 W) de la potencia total suministrada (12 W):
                     </p> <br>
 
                     <p class="formula-texto">

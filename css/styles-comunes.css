@@ -52,7 +52,7 @@ h1{
 }
 
 h2{
-    text-align: start;
+    text-align: left;
     margin-bottom: 0.2em;
     margin-top: 1em;
     color:#e2e2e2;
@@ -60,11 +60,12 @@ h2{
 
 h3{
     color:#e2e2e2;
-    text-align: center;
+    text-align: left;
+    margin-bottom: 0.4em;
 }
 
 p{
-    text-align: justify;    
+    text-align:left;    
     color:#e2e2e2;
 }
 
