@@ -23,8 +23,9 @@
 
             <nav>            
                 <a href="index.html">Home</a>
-                <a href="#calculadoras">Teoría</a>            
-                <a href="#">Calculadoras</a>
+                <a href="#tipos-led">Tipos de LED</a>  
+                <a href="#calculos-formulas">Fórmulas</a>          
+                <a href="#calculadoras">Calculadoras</a>
             </nav>
         </header>
 
@@ -68,7 +69,7 @@
                     </p> <br>
                 </section>
 
-                <section class="tipos-led">
+                <section id="tipos-led">
                     <h3>¿De qué depende la intensidad de la luz del LED?</h3>
                     <br>
                     <p>La luz emitida por un diodo LED tendrá una longitud de onda (color) que va en función del tipo de compuesto químico que lo constituye. <br>
@@ -110,7 +111,7 @@
                     </p>
                     <br>
 
-                    <h3>¿Cómo evitar que se queme el LED?</h3>
+                    <h3 id="calculos-formulas">¿Cómo evitar que se queme el LED?</h3>
                     <br>
 
                     <p>
@@ -128,7 +129,7 @@
                     </figure>
 
                     <p class="nota">
-                        <span class="nota-roja">Nota</span> : 5v - 2,4v / 20mA me da como resultado 0,13. Para pasarlo a Ω multiplico por 1000 el resultado. Es por eso que, en la fórmula, simplifiqué su resultado en 130. <br> También se podrían pasar los mA a A dividiendo entre 1000 a los 20 mA, entonces se dividiría 2,6v / 0.02 obteniendo los 130 Ω como resultado. <br><br>
+                        <span class="nota-roja">Nota</span>: 5v - 2,4v / 20mA me da como resultado 0,13. Para pasarlo a Ω multiplico por 1000 el resultado. Es por eso que, en la fórmula, simplifiqué su resultado en 130. <br> También se podrían pasar los mA a A dividiendo entre 1000 a los 20 mA, entonces se dividiría 2,6v / 0.02 obteniendo los 130 Ω como resultado. <br><br>
                     </p>
 
                     <h3>
@@ -142,7 +143,7 @@
                     </p>
 
                     <p class="formulas-subtitulo">
-                        Fórmula para calcular la Potencia
+                        Fórmula para calcular la Potencia de la Resistencia
                     </p>
 
                     <figure class="formulas">
@@ -163,7 +164,7 @@
                     </p> <br>
 
                     <p class="formulas-subtitulo">
-                        Configuración LEDs en serie
+                        Configuración de LEDs en serie
                     </p>
 
                     <figure class="formulas">
@@ -175,10 +176,10 @@
                         <span class="desventaja">Desventaja de conectar los LEDs en paralelo</span>: el número de LEDs a conectar estará limitado por el valor de la fuente de tensión que se utilize y por el tipo de LED utilizado. <br><br>
                     </p>
 
-                    <h3>¿Cuántos diodos LED blancos y de 3mm se podrán conectar en serie a una fuente de 12 V? </h3> <br>
+                    <h3>¿Cuántos diodos LED blancos de alta luminosidad y de 3mm se podrán conectar en serie a una fuente de 12 V? </h3> <br>
 
                     <p>
-                        Para ello, se deberá saber la tensión que hay en cada LED blanco cuando se ilumina. Si se va al <span class="datasheet">datasheet</span> del LED, los fabricantes proporcionan un rango de tensiones posibles cuando circula una determinada intensidad. Ejemplo: <span class="forward">FORWARD VOLTAGE 3,2~4,0VCD</span>.<br>En este caso, se deberá tomar siempre el caso más desfavorable, es decir, cuando cirucla <span class="forward">3,2 VCD</span> que será la tensión en sus extremos más pequeña. <br>
+                        Para ello, se deberá saber la tensión que hay en cada LED blanco cuando se ilumina. Si se va al <span class="datasheet">datasheet</span> del LED blanco de alta luminosidad, los fabricantes proporcionan un rango de tensiones posibles cuando circula una determinada intensidad. Ejemplo: <span class="forward">FORWARD VOLTAGE 3,2~3,4 VCD</span>.<br>En este caso, se deberá tomar siempre el caso más desfavorable, es decir, cuando cirucla <span class="forward">3,4 VCD</span> que será la tensión en sus extremos más pequeña. <br>
                         Ahora, dividimos la tensión de la fuente entre la tensión más pequeña facilitada por el fabricante en extremos del LED. <br><br>
                     </p>
 
@@ -192,9 +193,9 @@
                     </figure>
 
                     <p>
-                        Como se pudo observar en el resultado de la fórmula, el número de LEDs a conectar con una fuente de 12 V es de 3.
-                        <br>Obsérvese que hay una tensión que sobra, y es de <strong>2,4 V</strong>. Este número se obtiene al restar los 12 V de la fuente menos la tensión en extremos de los LEDs de 9,6 V, es decir, lo que consumen los 3 LEDs en serie. 
-                        <br>Dicha tensión sobrante deberá caer en una <strong>resistencia</strong> en serie con los LEDs. <br>
+                        Como se pudo observar en el resultado de la fórmula, el número de LEDs a conectar con una fuente de 12 V es de 3. Como no podemos tener una fracción de un diodo, redondeamos hacia abajo.
+                        <br>La tensión total que consumirán los 3 LEDs será de <strong>9,6 V</strong> (3,2v x 3), por lo tanto, nos sobrarán <strong>2,4 V</strong> (12v-9,6v = 2,4v). 
+                        <br>Dicha tensión sobrante deberá caer en una <strong>resistencia</strong> en serie con los LEDs. 
                         El valor de dicha resistencia siempre se determinará mediante la <strong>Ley de Ohm</strong>. <br><br>
                     </p>
 
@@ -214,9 +215,124 @@
                         <img src="./img/formula-r-3leds.png" alt="ohm-r-3leds" width="300px">
                     </figure>
 
-                </section>
-            </section>
+                    <h3>¿Y si quisiera conectar más LEDs?</h3>
+                    <br>
 
+                    <p>
+                        Si quisiera aumentar el número de LEDs podré conectar, en <strong>paralelo</strong>, tantas ramas como <strong>intensidad</strong> me brinde la fuente de alimentación. <br>
+                        Por ejemplo, si la fuente es de 1 A, como cada cadena de diodos LED necesita 20 mA, realizo la siguiente fórmula:<br><br>
+                    </p>
+
+                    <figure class="formulas">
+                        <img src="./img/numero-ramas.png" alt="numero-ramas" width="370px">
+                    </figure>
+
+                    <p>
+                        Entonces, con una fuente de alimentación de 12 V y 1 A podré conectar 50 ramas de 3 LEDs cada una, es decir ¡Unos 150 LEDs!
+                    </p> <br>
+
+                    <h3>¿Cuánta potencia consume el circuito?</h3>
+                    <br>
+
+                    <p>
+                        Para responder a la pregunta, es necesario saber cuánta <strong>potencia</strong> se pierde en forma de calor en las resistencias del total suministrado por la fuente. Pero primero calculemos cuánta potencia entrega la <strong>fuente</strong>.
+                    </p>
+                    <br>
+
+                    <p class="formulas-subtitulo">
+                        Fórmula para calcular la potencia de la fuente
+                    </p>
+
+                    <figure class="formulas">
+                        <img src="./img/potencia-fuente.png" alt="potencia-fuente" width="270px">
+                    </figure>
+
+                    <p>
+                        Ahora es necesario saber cuánta <strong>potencia</strong> disipa la resistencia en serie conectada a la cadena de 3 LEDs. Dicho dato se puede calcular, ya sea sabiendo la tensión como la intensidad que consume la resistencia. A fines didácticos, se ponen las dos fórmulas, ya que el resultado es el mismo. 
+                    </p> <br>
+
+                    <p class="formulas-subtitulo">
+                        Fórmula para calcular la potencia de la resistencia
+                        (con V)
+                    </p> 
+
+                    <figure class="formulas">
+                        <img src="./img/potencia-r-con-v.png" alt="potencia-r-v" width="350px">
+                    </figure>
+
+                    <p class="formulas-subtitulo">
+                        Fórmula para calcular la potencia de la resistencia
+                        (con I)
+                    </p> 
+
+                    <figure class="formulas">
+                        <img src="./img/potencia-r-con-i.png" alt="potencia-r-i" width="200px">
+                    </figure>
+
+                    <p>
+                        Cómo puede observarse, el resultado en ambas fórmulas es el mismo. <br>
+                        Ahora bien, como tenemos <strong>50 ramas</strong>, habrá 50 resistencias y, por ende,  tenemos que multiplicar las 50 ramas por la potencia de 1 resistencia: 
+                    </p>
+
+                    <figure class="formulas">
+                        <img src="./img/potencia-x-50.png" alt="potencia-x-50" width="280px">
+                    </figure>
+
+                    <p>
+                        La potencia perdida en todas las resistencias es de <strong>2,4 W</strong>.
+                    </p> <br>
+
+                    <h3>¿Y de cuánto es el rendimiento en el circuito?</h3>
+                    <br>
+                    
+                    <p>
+                        El rendimiento será el cociente entre la potencia útil (la potencia consumida por los componentes activos, como los LEDs) y la potencia suministrada por la fuente de alimentación. <br>                         
+                    </p>
+
+                    <p class="formulas-subtitulo">
+                        Fórmula para calcular el rendimiento del circuito
+                    </p> 
+
+                    <figure class="formulas">
+                        <img src="./img/potencia-util.png" alt="potencia-util" width="250px">
+                    </figure>
+
+                    <p>
+                        La <strong>Potencia útil</strong> es la potencia que realmente se utiliza en los componentes activos del circuito (en este caso, los LEDs). La <strong>potencia total</strong> es la potencia suministrada por la fuente de alimentación. <br>
+                        Como ya tenemos el dato de la potencia potencia total (12 W de la fuente) sólo falta calcular la potencia útil. Para encontrar la potencia útil, restamos la potencia disipada en las resistencias (2,4 W) de la potencia total suministrada (12 W):
+                    </p> <br>
+
+                    <p class="formula-texto">
+                        Potencia útil = 12 W - 2,4 W = 9,6 W
+                    </p> <br>
+
+                    <p class="formulas-subtitulo">
+                        Finalmente, el rendimiento del circuito es:
+                    </p>
+
+                    <figure class="formulas">
+                        <img src="./img/rendimiento-final.png" alt="rendimiento-final" width="190px">
+                    </figure>
+
+                    <p>
+                        Por lo tanto, el rendimiento del circuito es del <strong>80%</strong>
+                    </p><br>
+
+                    <p class="nota">
+                        <span class="nota-roja">Nota</span>: La letra <strong>𝜂</strong> es una letra del alfabeto griego que se utiliza comúnmente en física e ingeniería para representar el rendimiento o eficiencia de un sistema. En este contexto, el rendimiento (η) es una medida de cuán eficientemente un sistema convierte la energía de entrada en energía útil.
+                        <br>
+                        El nombre de la letra η en griego es "eta".
+                    </p>
+                </section>
+
+                <section id="calculadoras">
+                    <h2 class="titulo-calculadoras">Calculadoras</h2>
+                    <p class="elecciones">
+                        Elegí qué querés calcular
+                    </p>
+                </section>
+
+            </section>
         </main>
 
         <footer>
