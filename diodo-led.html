@@ -162,14 +162,29 @@
                         Configuración de LEDs en serie
                     </p>
 
+                    
                     <figure class="formulas">
                         <img src="./img/Leds-serie.png" alt="leds-serie" width="250px">
                     </figure>
+                    
+                    <p>
+                        <span class="ventaja">Ventaja de conectar los LEDs en serie</span>: La corriente que pasa por cada LED es idéntica y todos los LEDs tienen la misma intensidad,  por lo tanto, todos iluminan por igual. <br><br>
+                        <span class="desventaja">Desventaja de conectar los LEDs en serie</span>: el número de LEDs a conectar estará limitado por el valor tensión de la fuente, ya que la tensión total requerida es la suma de las tensiones de todos los LEDs conectados. Otra desventaja es que si un LED se apaga (por ejemplo, si se quema o se desconecta), todos los LEDs en la serie dejarán de funcionar, ya que el circuito se interrumpe.<br><br>
+                    </p>
+
+                    <p class="formulas-subtitulo">
+                        Configuración de LEDs en paralelo
+                    </p>
+
+                    <figure class="formulas">
+                        <img src="./img/leds-paralelo.png" alt="leds-paralelo" width="240px">
+                    </figure>
 
                     <p>
-                        <span class="ventaja">Ventaja de conectar los LEDs en serie</span>: todos los LEDs tienen la misma intensidad y por ende, todos iluminan por igual. <br><br>
-                        <span class="desventaja">Desventaja de conectar los LEDs en paralelo</span>: el número de LEDs a conectar estará limitado por el valor de la fuente de tensión que se utilice y por el tipo de LED utilizado. <br><br>
+                        <span class="ventaja">Ventaja de conectar los LEDs en paralelo</span>: Ventaja de conectar los LEDs en paralelo: todos los LEDs se alimentan con una tensión fija que no disminuye con la cantidad de LEDs conectados. Esto asegura que cada LED reciba la misma tensión, facilitando un brillo uniforme. <br><br>
+                        <span class="desventaja">Desventaja de conectar los LEDs en paralelo</span>: el número de LEDs a conectar estará limitado por la cantidad de corriente (A) que suministre la fuente de alimentación.A medida que se añaden más LEDs en paralelo, la corriente total requerida aumenta, lo que puede superar la capacidad de la fuente de alimentación si no se tiene cuidado.<br><br>
                     </p>
+
 
                     <h3>¿Cuántos diodos LED blancos de alta luminosidad y de 3 mm se podrán conectar en serie a una fuente de 12 V? </h3> 
 
@@ -321,23 +336,111 @@
                         <span class="nota-roja">Nota</span>: La letra <strong>𝜂</strong> es una letra del alfabeto griego que se utiliza comúnmente en física e ingeniería para representar el rendimiento o eficiencia de un sistema. En este contexto el rendimiento (η) es una medida de cuán eficientemente un sistema convierte la energía de entrada en energía útil.
                         <br>
                         El nombre de la letra η en griego es "eta".
+                    </p><br>
+
+                    <h3>Calcular la Intensidad sabiendo la tensión y los Watts</h3>
+
+                    <p>
+                        Adicionalmente, podemos calcular la corriente que consume uno o varios LEDs, así como también cualquier motor o artefacto eléctrico con la siguiente fórmula: 
                     </p>
+
+                    <figure class="formulas">
+                        <img src="./img/formula-i-segun-w.png" alt="formula-i-segun-w" width="70px">
+                    </figure>
+
+                    <p>
+                        Dónde <span class="span-formula-i-w">"I"</span> es la intensidad o amperaje, <span class="span-formula-i-w">"P"</span> son los watts que consume el LED o aparato, y <span class="span-formula-i-w">"V"</span>  es la tensión. 
+                    </p>
+
                 </section>
 
                 <section id="calculadoras">
                     <h2 class="titulo-calculadoras">Calculadoras</h2>
-                    <p class="elecciones">
-                        Elegí qué querés calcular
-                    </p>
-                </section>
+                    <p class="elecciones">Elegí qué querés calcular</p>
+                    <div class="botones">
+                        <button class="boton-serie" id="boton-serie">LEDs en serie</button>
+                        <button class="boton-paralelo" id="boton-paralelo">LEDs en paralelo </button>
+                        <button class="boton-watts" id="boton-watts">Consumo en Watts</button>
+                    </div>
+                    <!--CALCULO DE LEDS EN SERIE-->
+                    <div class="ingreso-datos">
+                        <div class="calculo-serie">
+                            <div class="inputs-boton">
+                                <label for="idTensionFuente">Ingresá la tensión de la fuente:</label>
+                                <input type="number" name="tension-fuente" id="idTensionFuente" class="caja-texto" placeholder="Tensión de la fuente" required>
 
+                                <label for="idTensionLed">Ingresá la tensión que consume el LED:</label>
+                                <input type="number" name="tension-led" id="idTensionLed" class="caja-texto" placeholder="Tensión del LED" required>
+
+                                <button class="boton-calcular" id="boton-calcular-leds-serie">CALCULAR</button>
+                            </div>
+                        </div> 
+                        <!--CALCULO DE LEDS EN PARALELO-->
+                        <div class="calculo-paralelo">
+                            <div class="inputs-boton">
+                                <label for="idIntensidadFuente">Ingresá intensidad de la fuente:</label>
+                                <input type="number" name="intensidad-fuente" id="idIntensidadFuente" class="caja-texto" placeholder="I de la fuente" required>
+                                <div class="opciones-a">
+                                    <button class="mA" id="mA-LED-A">mA</button>
+                                    <button class="a" id="a-LED-A">A</button>
+                                </div>
+
+                                <label for="idIntensidadLed">Ingresá la intensidad del LED:</label>
+                                <input type="number" name="intensidad-led" id="idIntensidadLed" class="caja-texto" placeholder="I del LED" required>
+                                <div class="opciones-a">
+                                    <button class="mA" id="mA-LED-B">mA</button>
+                                    <button class="a" id="a-LED-B">A</button>
+                                </div>
+
+                                <button class="boton-calcular" id="boton-calcular-leds-paralelo">CALCULAR</button>
+                            </div>
+                        </div>
+                        <!--CALCULO DE CONSUMO EN WATTS-->
+                        <div class="calculo-watts">
+                            <div class="inputs-boton">
+                                <label for="idCalculoWatts">Ingresá la tensión:</label>
+                                <input type="number" name="tension" id="idCalculoWatts" class="caja-texto" placeholder="Tensión" required>
+
+                                <label for="idIntensidad">Ingresá la intensidad:</label>
+                                <input type="number" name="intensidad" id="idIntensidad" class="caja-texto" placeholder="Intensidad" required>
+                                <div class="opciones-a">
+                                    <button class="mA" id="mA-LEDC">mA</button>
+                                    <button class="a" id="a-LEDC">A</button>
+                                </div>
+
+                                <button class="boton-calcular" id="boton-calcular-watts">CALCULAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--SECCIONES OCULTAS DE LOS RESULTADOS-->
+                <section class="seccion-resultado">
+                    <div class="resultado-serie">
+                        <p>
+                            Se pueden conectar hasta un máximo de <span class="leds-en-serie"></span> LEDs en serie
+                        </p>
+                    </div>
+
+                    <div class="resultado-paralelo">
+                        <p>
+                            Se pueden conectar hasta un máximo de <span class="leds-en-paralelo"></span> LEDs en paralelo
+                        </p>
+                    </div>
+
+                    <div class="resultado-watts">
+                        <p>
+                            El consumo es de <span class="consumo-en-watts"></span> Watts
+                        </p>
+                    </div>
+
+                    <button class="boton-reset-pag-led">RESET</button>
+                </section>
             </section>
         </main>
 
         <footer>
             <p class="copyright">Pablo Araoz © 2024 - Todos los derechos reservados</p>
         </footer>
-        
-        
+        <script src="./js/script-led.js"></script> 
     </body>
 </html>

@@ -88,6 +88,139 @@ main{
     max-width: 1140px;
 }
 
+.titulo-calculadoras{
+    text-align: center;
+    color:aqua;
+}
+
+.elecciones{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs-boton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 7px;
+    color: white;
+}
+
+.boton-voltaje, .boton-intensidad, .boton-resistencia, .boton-serie, .boton-paralelo, .boton-watts, .caja-texto{
+    width: 180px;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/*Estilos que serán agregados desde JavaScript:*/
+.iluminar-boton{
+    box-shadow: 0px 0px 12px yellow;
+    background-color: yellow;
+    color:black;
+    font-weight: bold;
+}
+
+.opciones-a{
+    display: flex;
+    justify-content: space-evenly;
+    width: 120px
+}
+
+.mA, .a{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: white;
+    background-color:rgb(0, 183, 255); 
+    cursor: pointer;
+}
+
+.boton-calcular{
+    font-family: 'Poppins';
+    width: 180px; 
+    font-size: 1rem;
+    background-color: rgb(0, 160, 0);
+    margin-top: 15px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.boton-calcular:hover{
+    background-color: rgb(255, 0, 255);    
+}
+
+.calculo-voltaje{
+    display: none;
+}
+
+.calculo-corriente{
+    display: none;
+}
+
+.calculo-resistencia{
+    display: none;
+}
+
+.calculo-serie{
+    display: none;
+}
+
+.calculo-paralelo{
+    display: none;
+}
+
+.calculo-watts{
+    display: none;
+}
+
+/*Sección resultado:*/
+.seccion-resultado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.resultado-tension, .resultado-corriente, .resultado-corriente-2, .resultado-resistencia, .resultado-serie, .resultado-paralelo, .resultado-watts{
+    display: none;
+}
+
+.tension1, .intensidad1, .intensidad2, .ohmios, .leds-en-serie, .leds-en-paralelo, .consumo-en-watts{
+    color:orange;
+}
+
+.resultado-tension, .resultado-corriente, .resultado-corriente-2, .resultado-resistencia, .resultado-serie, .resultado-paralelo, .resultado-watts > p{
+    text-align: center;    
+    font-size: 1.1em;
+}
+
+.boton-reset, .boton-reset-pag-led{
+    display: none;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    width: 180px;    
+    background-color: rgb(128, 0, 0);
+    color: rgb(255, 255, 255);
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.boton-reset:hover{
+    background-color: black;
+    color: yellow;
+}
+
+
+
 footer{
     background-color: black;
     margin-top: 15px;

@@ -65,15 +65,27 @@
     text-align: center;
 }
 
-.titulo-calculadoras{
-    text-align: center;
+/*Clases que serán agregadas con Js:*/
+.animar-boton-serie{
+    box-shadow: 0 0 20px red;
+    color:red;
+}
+
+.animar-boton-paralelo{
+    box-shadow: 0 0 20px yellow;
+    color:rgb(255, 68, 0);
+}
+
+.animar-boton-watts{
+    box-shadow: 0 0 20px green;
+    color:rgb(0, 99, 0);
+}
+
+.span-formula-i-w{
     color:aqua;
 }
 
-.elecciones{
-    text-align: center;
-    margin-bottom: 10px;
-}
+
 
 /* RESPONSIVE */
 @media (min-width: 320px) {

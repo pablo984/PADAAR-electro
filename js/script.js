@@ -68,6 +68,7 @@ const botonReset = document.querySelector(".boton-reset");
 botonVoltaje.addEventListener("click", mostrarCalculadoraVoltaje);
 botonIntensidad.addEventListener("click", mostrarCalculadoraIntensidad);
 botonResistencia.addEventListener("click", mostrarCalculadoraResistencia);
+
 opcionOhm.addEventListener("click", ohm);
 opcionKohm.addEventListener("click", kohm);
 opcionMohm.addEventListener("click", mohm);
@@ -79,7 +80,7 @@ opcionMohm2.addEventListener("click", mohm2);
 opcionA2.addEventListener("click", a2);
 opcionmA2.addEventListener("click", mA2);
 
-//EVENTO AL PRESIONAR LOS BOTONES "CALCULAR":
+//EVENTOS AL PRESIONAR LOS BOTONES "CALCULAR":
 botonCalcularVoltaje.addEventListener("click", chequearYCalcularVoltaje);
 botonCalcularCorriente.addEventListener("click", chequearYCalcularCorriente);
 botonCalcularResistencia.addEventListener("click", chequearYCalcularResistencia);
@@ -126,6 +127,7 @@ function mostrarCalculadoraResistencia(){
     quitarClaseAVoltaje()
     quitarClaseAIntensidad()
 }
+
 
 //FUNCIONES QUE ILUMINAN LAS OPCIONES:
 //SECCION PARA CALCULAR VOLTAJE:
@@ -237,7 +239,7 @@ function mA2(){
     eliminarIluminacion(opcionA2);
 }
 
-//FUNCIONES GENERALES PARA ILUMINAR Y APAGAR TEXTO Y BOTONES:
+//FUNCIONES REUTILIZABLES PARA ILUMINAR Y APAGAR TEXTO Y BOTONES:
 function iluminar(boton){
     boton.classList.toggle("iluminar-boton");    
 }
@@ -271,6 +273,7 @@ function animarBotonIntensidad(){
 function animarBotonResistencia(){
     botonResistencia.classList.toggle("animar-boton-resistencia");
 }
+
 
 //FUNCIONES QUE CHEQUEAN INGRESO DE DATOS, Y CHEQUEAN LOS CÁLCULOS: 
 //CÁLCULO DE VOLTAJE:
@@ -431,7 +434,7 @@ function cargarDatos(){
     valorTension2 = datoVoltaje2.value;
     valorResistencia2 = datoResistencia2.value;
     valorIntensidad2 = datoCorriente2.value;
-    idDelBotonElegido = sessionStorage.getItem("idBotonElegido");
+    // idDelBotonElegido = sessionStorage.getItem("idBotonElegido");
 }
 
 function resetear(){
