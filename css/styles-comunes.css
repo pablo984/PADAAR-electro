@@ -112,7 +112,7 @@ main{
     color: white;
 }
 
-.boton-voltaje, .boton-intensidad, .boton-resistencia, .boton-serie, .boton-paralelo, .boton-watts, .caja-texto{
+.boton-voltaje, .boton-intensidad, .boton-resistencia, .boton-serie, .boton-paralelo, .boton-watts, .boton-corriente, .caja-texto{
     width: 180px;
     font-family: 'Poppins';
     font-size: 1rem;
@@ -157,6 +157,7 @@ main{
     background-color: rgb(255, 0, 255);    
 }
 
+/*SECCIONES OCULTAS DE RESULTADO DE CALCULADORAS*/
 .calculo-voltaje{
     display: none;
 }
@@ -181,6 +182,10 @@ main{
     display: none;
 }
 
+.calculo-intensidad{
+    display: none;
+}
+
 /*Sección resultado:*/
 .seccion-resultado{
     display: flex;
@@ -190,11 +195,12 @@ main{
     margin-top: 1rem;
 }
 
-.resultado-tension, .resultado-corriente, .resultado-corriente-2, .resultado-resistencia, .resultado-serie, .resultado-paralelo, .resultado-watts{
+.resultado-tension, .resultado-corriente, .resultado-corriente-2, 
+.resultado-resistencia, .resultado-serie, .resultado-paralelo, .resultado-watts, .resultado-intensidad{
     display: none;
 }
 
-.tension1, .intensidad1, .intensidad2, .ohmios, .leds-en-serie, .leds-en-paralelo, .consumo-en-watts{
+.tension1, .intensidad1, .intensidad2, .ohmios, .leds-en-serie, .leds-en-paralelo, .consumo-en-watts, .consumo-en-corriente{
     color:orange;
 }
 

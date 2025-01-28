@@ -6,6 +6,8 @@ let valorIntensidadFuente = "";
 let valorIntensidadLed = "";
 let valorTension = "";
 let valorIntensidad = "";
+let valorPotencia = "";
+let valorVoltaje = "";
 
 //VARIABLE QUE ALMACENA EL VALOR DEL SESSIONSTORAGE DE LA PÁGINA DE LEDs:
 let idDelBotonElegidoEnLeds;
@@ -13,10 +15,11 @@ let idDelBotonElegidoEnLeds;
 //RESULTADO:
 let resultadoPaginaLeds;
 
-//BOTONES DE CÁLCULO (Calcular Serie, Paralelo, Watts) en página de LEDs:
+//BOTONES DE CÁLCULO (Calcular Serie, Paralelo, Watts, corriente) en página de LEDs:
 const botonSerie = document.querySelector(".boton-serie");
 const botonParalelo = document.querySelector(".boton-paralelo");
 const botonWatts = document.querySelector(".boton-watts");
+const botonCorriente = document.querySelector(".boton-corriente");
 
 //IDs DE LAS CAJAS DE INGRESO DE VALORES:
 //CAJA DE CÁLCULO DE LEDS EN SERIE:
@@ -28,6 +31,9 @@ const datoIntensidadLed = document.getElementById("idIntensidadLed");
 //CAJA DE CÁLCULO DE WATTS:
 const datoDeTension = document.getElementById("idCalculoWatts");
 const datoDeIntensidad = document.getElementById("idIntensidad");
+//CAJA DE CÁLCULO DE CORRIENTE:
+const datoDePotencia = document.getElementById("idPotencia");
+const datoDeVoltaje = document.getElementById("idVoltaje");
 
 //SECCIONES OCULTAS PÁGINA LEDs:
 const seccionSerie = document.querySelector(".calculo-serie");
@@ -42,6 +48,10 @@ const seccionWatts = document.querySelector(".calculo-watts");
 const seccionResultadoWatts = document.querySelector(".resultado-watts");
 const spanWatts = document.querySelector(".consumo-en-watts");
 
+const seccionCorriente = document.querySelector(".calculo-intensidad");
+const seccionResultadoCorriente = document.querySelector(".resultado-intensidad");
+const spanCorriente = document.querySelector(".consumo-en-corriente");
+
 //BOTONES DE OPCIONES (mA-A) EN PÁGINA DE LEDs:
 const opcionmALedA = document.getElementById("mA-LED-A");
 const opcionALedA = document.getElementById("a-LED-A");
@@ -54,6 +64,7 @@ const opcionALedC = document.getElementById("a-LEDC");
 const botonCalcularLedsEnSerie = document.getElementById("boton-calcular-leds-serie");
 const botonCalcularLedsEnParalelo = document.getElementById("boton-calcular-leds-paralelo");
 const botonCalcularWatts = document.getElementById("boton-calcular-watts");
+const botonCalcularCorriente = document.getElementById("boton-calcular-corriente");
 
 //BOTÓN "RESET":
 const botonReset = document.querySelector(".boton-reset-pag-led");
@@ -62,6 +73,7 @@ const botonReset = document.querySelector(".boton-reset-pag-led");
 botonSerie.addEventListener("click", mostrarCalculadoraSerie);
 botonParalelo.addEventListener("click", mostrarCalculadoraParalelo);
 botonWatts.addEventListener("click", mostrarCalculadoraWatts);
+botonCorriente.addEventListener("click", mostrarCalculadoraCorriente);
 
 opcionmALedA.addEventListener("click", mALedA);
 opcionALedA.addEventListener("click", aLedA);
@@ -70,11 +82,11 @@ opcionALedB.addEventListener("click", aLedB);
 opcionmALedC.addEventListener("click", mALedC);
 opcionALedC.addEventListener("click", aLedC);
 
-
 //EVENTOS AL PRESIONAR LOS BOTONES "CALCULAR":
 botonCalcularLedsEnSerie.addEventListener("click", chequearYCalcularSerie);
 botonCalcularLedsEnParalelo.addEventListener("click", chequearYCalcularParalelo);
 botonCalcularWatts.addEventListener("click", chequearYCalcularWatts);
+botonCalcularCorriente.addEventListener("click", chequearYCalcularCorriente);
 
 //EVENTO AL PRESIONAR EL BOTÓN "RESET":
 botonReset.addEventListener("click", resetearPagina);
@@ -88,9 +100,11 @@ function mostrarCalculadoraSerie(){
     seccionSerie.style.display="block";
     seccionParalelo.style.display="none";
     seccionWatts.style.display="none";
+    seccionCorriente.style.display="none";
     animarBotonSerie();
     quitarClaseABotonParalelo();
     quitarClaseABotonWatts();
+    quitarClaseABotonCorriente();
 }
 
 function mostrarCalculadoraParalelo(){
@@ -101,9 +115,11 @@ function mostrarCalculadoraParalelo(){
     seccionParalelo.style.display="block";
     seccionSerie.style.display="none";
     seccionWatts.style.display="none";
+    seccionCorriente.style.display="none";
     animarBotonParalelo();
     quitarClaseABotonSerie();
     quitarClaseABotonWatts();
+    quitarClaseABotonCorriente();
 }
 
 function mostrarCalculadoraWatts(){
@@ -114,9 +130,26 @@ function mostrarCalculadoraWatts(){
     seccionWatts.style.display="block";
     seccionParalelo.style.display="none";
     seccionSerie.style.display="none";
+    seccionCorriente.style.display="none";
     animarBotonWatts();
     quitarClaseABotonSerie();
     quitarClaseABotonParalelo();
+    quitarClaseABotonCorriente();
+}
+
+function mostrarCalculadoraCorriente(){
+    //Obtiene el ID del botón:
+    let idBotonElegido2 = botonCorriente.id;
+    //Agrega el id del botón al sessionStorage:
+    sessionStorage.setItem("idBotonElegido2", idBotonElegido2);
+    seccionCorriente.style.display="block";
+    seccionWatts.style.display="none";
+    seccionParalelo.style.display="none";
+    seccionSerie.style.display="none";
+    animarBotonCorriente();
+    quitarClaseABotonSerie();
+    quitarClaseABotonParalelo();
+    quitarClaseABotonWatts();
 }
 
 //FUNCIONES QUE ILUMINAN LAS OPCIONES:
@@ -273,6 +306,23 @@ function chequearYCalcularWatts(){
     }    
 }
 
+function chequearYCalcularCorriente(){
+    cargarDatosDeUsuario();
+    
+    if((valorPotencia === "") || (valorVoltaje === "")){
+        alert("Tenés que completar TODOS los campos");
+    }
+    else{
+        let mostrarSeccionResultado = seccionResultadoCorriente.style.display="block";
+        let mostrarBotonReset = botonReset.style.display="block";
+
+        resultadoCorriente = (valorPotencia / valorVoltaje).toFixed(3);
+        spanCorriente.innerHTML = resultadoCorriente;
+        mostrarSeccionResultado;
+        mostrarBotonReset;
+    }    
+}
+
 //FUNCIÓN QUE LEE LOS DATOS INGRESADOS POR EL USUARIO:
 function cargarDatosDeUsuario(){
     valorTensionFuente = datoTensionFuente.value;
@@ -283,6 +333,9 @@ function cargarDatosDeUsuario(){
 
     valorTension = datoDeTension.value;
     valorIntensidad = datoDeIntensidad.value;
+
+    valorPotencia = datoDePotencia.value;
+    valorVoltaje = datoDeVoltaje.value;
 }
 
 
@@ -308,6 +361,10 @@ function animarBotonWatts(){
     botonWatts.classList.toggle("animar-boton-watts");
 }
 
+function animarBotonCorriente(){
+    botonCorriente.classList.toggle("animar-boton-corriente");
+}
+
 //FUNCIONES QUE QUITAN CLASES AL HTML:
 function quitarClaseABotonSerie(){
     botonSerie.classList.remove("animar-boton-serie");    
@@ -319,6 +376,10 @@ function quitarClaseABotonParalelo(){
 
 function quitarClaseABotonWatts(){
     botonWatts.classList.remove("animar-boton-watts");
+}
+
+function quitarClaseABotonCorriente(){
+    botonCorriente.classList.remove("animar-boton-corriente");
 }
 
 function resetearPagina(){

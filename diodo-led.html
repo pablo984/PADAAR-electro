@@ -349,11 +349,11 @@
                     </figure>
 
                     <p>
-                        Dónde <span class="span-formula-i-w">"I"</span> es la intensidad o amperaje, <span class="span-formula-i-w">"P"</span> son los watts que consume el LED o aparato, y <span class="span-formula-i-w">"V"</span>  es la tensión. 
+                        Dónde <span class="span-formula-i-w">"I"</span> es la intensidad o amperaje, <span class="span-formula-i-w">"P"</span> son los watts que consume el LED o aparato, y <span class="span-formula-i-w">"V"</span> es la tensión. 
                     </p>
 
                 </section>
-
+                <!--CALCULADORAS-->
                 <section id="calculadoras">
                     <h2 class="titulo-calculadoras">Calculadoras</h2>
                     <p class="elecciones">Elegí qué querés calcular</p>
@@ -361,6 +361,7 @@
                         <button class="boton-serie" id="boton-serie">LEDs en serie</button>
                         <button class="boton-paralelo" id="boton-paralelo">LEDs en paralelo </button>
                         <button class="boton-watts" id="boton-watts">Consumo en Watts</button>
+                        <button class="boton-corriente" id="boton-corriente">I sabiendo W y T</button>
                     </div>
                     <!--CALCULO DE LEDS EN SERIE-->
                     <div class="ingreso-datos">
@@ -411,6 +412,18 @@
                                 <button class="boton-calcular" id="boton-calcular-watts">CALCULAR</button>
                             </div>
                         </div>
+                        <!--CALCULO DE INTENSIDAD SEGÚN WATTS Y TENSIÓN-->
+                        <div class="calculo-intensidad">
+                            <div class="inputs-boton">
+                                <label for="idPotencia">Ingresá los Watts (Potencia):</label>
+                                <input type="number" name="potencia" id="idPotencia" class="caja-texto" placeholder="watts" required>
+
+                                <label for="idVoltaje">Ingresá la tensión:</label>
+                                <input type="number" name="voltaje" id="idVoltaje" class="caja-texto" placeholder="tension" required>
+                                
+                                <button class="boton-calcular" id="boton-calcular-corriente">CALCULAR</button>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <!--SECCIONES OCULTAS DE LOS RESULTADOS-->
@@ -433,13 +446,19 @@
                         </p>
                     </div>
 
+                    <div class="resultado-intensidad">
+                        <p>
+                            La intensidad es de <span class="consumo-en-corriente"></span> Amperes
+                        </p>
+                    </div>
+
                     <button class="boton-reset-pag-led">RESET</button>
                 </section>
             </section>
         </main>
 
         <footer>
-            <p class="copyright">Pablo Araoz © 2024 - Todos los derechos reservados</p>
+            <p class="copyright">Pablo Araoz © 2025 - Todos los derechos reservados</p>
         </footer>
         <script src="./js/script-led.js"></script> 
     </body>

@@ -81,6 +81,11 @@
     color:rgb(0, 99, 0);
 }
 
+.animar-boton-corriente{
+    box-shadow: 0 0 20px rgb(0, 195, 255);
+    color:rgb(0, 195, 255);
+}
+
 .span-formula-i-w{
     color:aqua;
 }
